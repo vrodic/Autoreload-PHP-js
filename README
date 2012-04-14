@@ -1,4 +1,4 @@
-ReloadOnChange is a simple PHP/Javascript library that can be 
+Autoreload-PHP-js is a simple PHP/Javascript library that can be 
 useful when developing web applications. 
 
 The basic idea is that a page can reload itself if any files implementing the
