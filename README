@@ -1,0 +1,25 @@
+ReloadOnChange is a simple PHP/Javascript library that can be 
+useful when developing web applications. 
+
+The basic idea is that a page can reload itself if any files implementing the
+page have changed on the server. Primarily useful for development, but could 
+have other fun uses (if properly secured).  
+
+When your page is loaded a small JavaScript snippet is executed that POSTs to 
+inofity.php a list of full serverside pathnames that the script depends on. 
+This request blocks until any of listed files is changed, 
+and then reloads the page. 
+
+In current incarnation it depends on Linux and inotify-tools, but in theory,
+the same concept could be easily implemented on any OS that can report changes
+to files. In current implementation it's useful just for development purposes,
+since it uses a PHP connection for every page that is loaded in browser.
+
+
+To use it, put reloadonchange.js in your javascript directory, and 
+reloadonchange.php and inotify.php in your PHP project lib directory 
+(or equivalent), modify paths relative paths (lib) if needed.
+
+Optional, but recommended PECL extension 'inclued' will add dependant files 
+your script has loaded so far to the list of files to be monitored for changes.
+
